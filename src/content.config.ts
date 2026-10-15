@@ -39,7 +39,7 @@ const publication = z.object({
 const publications = defineCollection({ loader: file("src/data/publications.yaml"), schema: publication });
 
 // TSOST_URL points the build at a local tsost for testing.
-const tsost = process.env.TSOST_URL ?? "https://francesco-di-maggio.github.io/tsost";
+const tsost = process.env.TSOST_URL ?? "https://francescodimaggio.nl/tsost";
 const phd = defineCollection({
   loader: async () => {
     const res = await fetch(`${tsost}/publications.json`);

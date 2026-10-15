@@ -3,7 +3,7 @@ title: "mqtt-max"
 summary: "A Max package for MQTT."
 start: 2026
 links:
-  - { label: "Website", url: "https://francesco-di-maggio.github.io/mqtt-max/" }
+  - { label: "Website", url: "https://francescodimaggio.nl/mqtt-max/" }
   - { label: "GitHub", url: "https://github.com/francesco-di-maggio/mqtt-max" }
 ---
 

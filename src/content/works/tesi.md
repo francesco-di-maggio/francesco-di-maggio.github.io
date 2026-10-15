@@ -3,7 +3,7 @@ title: "TESI"
 summary: "A toolkit for tangible and embodied sound interaction."
 start: 2025
 links:
-  - { label: "TSOST", url: "https://francesco-di-maggio.github.io/tsost/tesi/" }
+  - { label: "TSOST", url: "https://francescodimaggio.nl/tsost/tesi/" }
   - { label: "GitHub", url: "https://github.com/francesco-di-maggio/tesi" }
 images:
   - { src: "tesi-1.jpg", alt: "TESI" }
