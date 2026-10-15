@@ -43,6 +43,7 @@ const cv = defineCollection({
   loader: file("src/data/cv.yaml"),
   schema: z.object({
     section: z.enum(["work", "teaching", "education", "performances", "presentations"]),
+    group: z.enum(["monolith", "a-pole-tragedy"]).optional(),
     when: z.coerce.string(),
     title: z.string(),
     sub: z.string().optional(),

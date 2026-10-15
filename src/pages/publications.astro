@@ -1,39 +1,20 @@
 ---
-import { getCollection, type CollectionEntry } from "astro:content";
 import Base from "../layouts/Base.astro";
+import Citation from "../components/Citation.astro";
+import { publications } from "../publications";
 
-type Pub = CollectionEntry<"publications">;
-
-// Newest first within a year; entries without a date go last.
-const time = (p: Pub) => p.data.date?.getTime() ?? 0;
-const pubs = (await getCollection("publications")).sort((a, b) => time(b) - time(a));
-const yearsDesc = [...new Set(pubs.map((p) => p.data.year))].sort((a, b) => b - a);
-const authors = (p: Pub) => p.data.authors.map((a, i) => (p.data.equal && i < p.data.equal ? `${a}*` : a)).join(", ");
-const links = (p: Pub) => [
-  ...(p.data.doi ? [{ label: "DOI", url: `https://doi.org/${p.data.doi}` }] : []),
-  ...(p.data.url ? [{ label: "Link", url: p.data.url }] : []),
-  ...(p.data.tsost ? [{ label: "TSOST", url: `https://francesco-di-maggio.github.io/tsost/publications/${p.data.tsost}/` }] : []),
-];
+const pubs = await publications();
+const years = [...new Set(pubs.map((p) => p.data.year))];
 ---
 <Base title="Publications" description="Papers, workshops and book chapters by Francesco Di Maggio.">
   <h1>Publications</h1>
   <p class="lead">Papers, workshops and book chapters. * Equal contribution.</p>
-  {yearsDesc.map((y) => (
+  {years.map((y) => (
     <Fragment>
       <h2 class="label">{y}</h2>
       <div class="panel lists">
         <ul class="list">
-          {pubs.filter((p) => p.data.year === y).map((p) => (
-            <li class="cite" id={p.id}>
-              <b>{p.data.title}</b>
-              <span class="sub">{authors(p)}</span>
-              <span class="sub">{[p.data.venue, p.data.kind, p.data.status].filter(Boolean).join(" · ")}</span>
-              <span class="links label">
-                {p.data.award && <span class="award">{p.data.award}</span>}
-                {links(p).map((l) => <a href={l.url}>{l.label} →</a>)}
-              </span>
-            </li>
-          ))}
+          {pubs.filter((p) => p.data.year === y).map((p) => <Citation pub={p} />)}
         </ul>
       </div>
     </Fragment>

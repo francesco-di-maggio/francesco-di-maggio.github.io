@@ -1,203 +1,212 @@
 - id: tue
   section: work
-  when: 2024–
-  title: PhD Researcher in Industrial Design
-  sub: Eindhoven University of Technology (TU/e). The Sound of Smart Things
+  when: 2024–present
+  title: PhD Candidate in Industrial Design
+  sub: Eindhoven University of Technology, NL
   url: https://www.tue.nl/en/
+
 - id: cnrs
   section: work
   when: 2022–2024
   title: Research Engineer
-  sub: CNRS, Maison des Sciences de l'Homme Paris Nord. Body Brain Digital Musical Instrument (BBDMI)
+  sub: CNRS, MSH Paris Nord, Saint-Denis, FR
   url: https://www.mshparisnord.fr
+
 - id: gripbeats
   section: work
-  when: 2020–
+  when: 2020–present
   title: Software Developer
-  sub: GripBeats. GripBeats Desktop App
+  sub: GripBeats, Remote
   url: https://www.gripbeats.com/
+
 - id: sonology-ewp
   section: work
   when: 2019–2021
   title: Sound Technician
-  sub: Institute of Sonology, Royal Conservatoire of The Hague. Electronics Workshop
+  sub: Electronics Workshop, Institute of Sonology, The Hague, NL
   url: http://sonology.org/
+
 - id: ljs
   section: work
   when: 2019–2021
   title: Apple Certified Technician
-  sub: LJS, Apple Authorised Reseller & Service Provider
+  sub: LJS, The Hague, NL
   url: https://ljs.nl/
+
 
 - id: dcm180-26
   section: teaching
   when: 2026
   title: The Sound of Smart Things (DCM180)
-  sub: Elective, Industrial Design, TU/e. With Bart Hengeveld and Berry Eggen
+  sub: Industrial Design, TU/e, Eindhoven, NL
   url: https://notes.francescodimaggio.nl/TSOST-26/Home
+
 
 - id: msc-sonology
   section: education
   when: "2021"
   title: Master's, Sonology – Instruments & Interfaces
-  sub: Institute of Sonology, Royal Conservatoire of The Hague, and STEIM
+  sub: Royal Conservatoire, The Hague, and STEIM, NL
   url: http://sonology.org/
+
 - id: msc-perugia
   section: education
   when: "2020"
-  title: Master's, Electronic Music and New Technologies
-  sub: Conservatorio di Musica di Perugia "F. Morlacchi"
+  title: Master's, Electronic Music
+  sub: Conservatorio "F. Morlacchi", Perugia, IT
+
 - id: bsc-sonology
   section: education
   when: "2019"
   title: Bachelor's, Sonology – Instruments & Interfaces
-  sub: Institute of Sonology, Royal Conservatoire of The Hague
+  sub: Royal Conservatoire, The Hague, NL
   url: http://sonology.org/
+
 - id: erasmus
   section: education
-  when: "2018"
-  title: Erasmus exchange
-  sub: Institute of Sonology, Royal Conservatoire of The Hague
+  when: 2017–2018
+  title: Erasmus Exchange
+  sub: Royal Conservatoire, The Hague, NL
+
 - id: bsc-perugia
   section: education
   when: "2017"
-  title: Bachelor's, Electronic Music and New Technologies
-  sub: Conservatorio di Musica di Perugia "F. Morlacchi"
+  title: Bachelor's, Electronic Music
+  sub: Conservatorio "F. Morlacchi", Perugia, IT
+
 - id: liceo
   section: education
   when: "2011"
   title: Diploma, Humanities
-  sub: Liceo Classico "A. Poliziano", Montepulciano
+  sub: Liceo Classico "A. Poliziano", Montepulciano, IT
+
 
 - id: monolith-2025-rooms
   section: performances
+  group: monolith
   when: "2025-01-25"
   title: Monolith
-  sub: Rooms Festival, Maastricht, NL. With Sofie Kramer and Mári Mákó
+  sub: Rooms Festival, Maastricht, NL
   url: https://sofiekramer.nl/monolith
+
 - id: monolith-2024-winternights
   section: performances
+  group: monolith
   when: "2024-12-13"
   title: Monolith
-  sub: Winternights Festival, Maastricht, NL. With Sofie Kramer and Mári Mákó
+  sub: Winternights Festival, Maastricht, NL
   url: https://sofiekramer.nl/monolith
+
 - id: monolith-2024-fashionclash
   section: performances
+  group: monolith
   when: "2024-11-15"
   title: Monolith
-  sub: Fashion Clash Festival, Maastricht, NL. With Sofie Kramer and Mári Mákó
+  sub: Fashion Clash Festival, Maastricht, NL
   url: https://sofiekramer.nl/monolith
+
 - id: tragedy-2024-oostende
   section: performances
+  group: a-pole-tragedy
   when: "2024-10-26"
   title: A Pole Tragedy
-  sub: De Grote Post, Oostende, BE. With Sofie Kramer and Mári Mákó
-  url: https://sofiekramer.nl/pole-tragedy
+  sub: De Grote Post, Oostende, BE
+  url: https://sofiekramer.nl/kopie-van-a-pole-tragedy-1
+
 - id: tragedy-2024-zwolle
   section: performances
+  group: a-pole-tragedy
   when: "2024-10-15"
   title: A Pole Tragedy
-  sub: Zwolse Theaters, Zwolle, NL. With Sofie Kramer and Mári Mákó
-  url: https://sofiekramer.nl/pole-tragedy
+  sub: Zwolse Theaters, Zwolle, NL
+  url: https://sofiekramer.nl/kopie-van-a-pole-tragedy-1
+
 - id: tragedy-2024-leiden
   section: performances
+  group: a-pole-tragedy
   when: "2024-09-28"
   title: A Pole Tragedy
-  sub: Theater De Generator, Leiden, NL. With Sofie Kramer and Mári Mákó
-  url: https://sofiekramer.nl/pole-tragedy
+  sub: Theater De Generator, Leiden, NL
+  url: https://sofiekramer.nl/kopie-van-a-pole-tragedy-1
+
+- id: tragedy-2024-amsterdam-26
+  section: performances
+  group: a-pole-tragedy
+  when: "2024-09-26"
+  title: A Pole Tragedy
+  sub: Theater Bellevue, Amsterdam, NL
+  url: https://sofiekramer.nl/kopie-van-a-pole-tragedy-1
+
 - id: tragedy-2024-amsterdam
   section: performances
+  group: a-pole-tragedy
   when: "2024-09-25"
-  title: A Pole Tragedy (2 shows)
-  sub: Theater Bellevue, Amsterdam, NL. With Sofie Kramer and Mári Mákó
-  url: https://sofiekramer.nl/pole-tragedy
+  title: A Pole Tragedy
+  sub: Theater Bellevue, Amsterdam, NL
+  url: https://sofiekramer.nl/kopie-van-a-pole-tragedy-1
+
 - id: tragedy-2024-breda
   section: performances
+  group: a-pole-tragedy
   when: "2024-09-19"
   title: A Pole Tragedy
-  sub: Podium Bloos, Breda, NL. With Sofie Kramer and Mári Mákó
-  url: https://sofiekramer.nl/pole-tragedy
+  sub: Podium Bloos, Breda, NL
+  url: https://sofiekramer.nl/kopie-van-a-pole-tragedy-1
+
 - id: bbdmi-2022-concert
   section: performances
   when: "2022-12-08"
   title: Concert du projet BBDMI
-  sub: MSH Paris Nord, Saint-Denis, FR. With Atau Tanaka and Robin Dussurget
+  sub: MSH Paris Nord, Saint-Denis, FR
   url: https://www.mshparisnord.fr/event/concert-du-projet-bbdmi/
+
 - id: monolith-2022-krakow
   section: performances
+  group: monolith
   when: "2022-11-27"
   title: Monolith
-  sub: Audio Art Festival, Cricoteka, Kraków, PL. With Sofie Kramer and Mári Mákó
+  sub: Audio Art Festival, Cricoteka, Kraków, PL
   url: https://www.youtube.com/watch?v=u416h4zcM6Y
+
 - id: tragedy-2021-denhaag
   section: performances
+  group: a-pole-tragedy
   when: "2021-10-15"
   title: A Pole Tragedy
-  sub: Zaal3, Het Nationale Theater, Den Haag, NL. With Sofie Kramer and Mári Mákó
-  url: https://sofiekramer.nl/pole-tragedy
+  sub: Zaal3, Het Nationale Theater, The Hague, NL
+  url: https://sofiekramer.nl/kopie-van-a-pole-tragedy-1
+
 - id: ircam-2021
   section: education
   when: "2021"
   title: Mixed Music Interpretation Workshop
-  sub: IRCAM, ManiFeste 2021, Paris
+  sub: IRCAM, ManiFeste 2021, Paris, FR
+
 
 - id: jim-2023
   section: presentations
   when: "2023-05-24"
-  title: Journées d'Informatique Musicale (JIM) 2023
-  sub: MSH Paris Nord, Saint-Denis, FR
+  title: JIM 2023
+  sub: BBDMI project, MSH Paris Nord, Saint-Denis, FR
   url: https://www.mshparisnord.fr/appels-a-communications/jim-2023/
+
 - id: convergence-2023
   section: presentations
   when: "2023-04-21"
-  title: Convergence 2023 (seminar)
-  sub: Royal Conservatoire Antwerp, BE. Body-Brain Digital Musical Instrument, with David Fierro
+  title: Convergence 2023
+  sub: BBDMI project, Royal Conservatoire Antwerp, BE
   url: https://www.ap-arts.be/en/event/convergence-2023
-- id: je-ia-2023
-  section: presentations
-  when: "2023-03-27"
-  title: Journée d'étude Intelligence Artificielle
-  sub: MSH Paris Nord, Saint-Denis, FR
-  url: https://www.mshparisnord.fr/event/je-ia-entre-arts-et-sciences-musique-et-mathematiques/
-- id: bbdmi-2023-insolites
-  section: presentations
-  when: "2023-10-12"
-  title: BBDMI workshop, CNRS Visites insolites
-  sub: MSH Paris Nord, Saint-Denis, FR. With the BBDMI team
-  url: https://univ-paris8.fr/Visite-insolite-a-la-MSH-Paris-Nord
-- id: bbdmi-2024-garden-workshop
-  section: presentations
-  when: "2024-05-31"
-  title: BBDMI workshop in the garden
-  sub: MSH Paris Nord, Saint-Denis, FR. With the BBDMI team
-  url: https://openagenda.com/ca/rdvj/events/atelier-bbdmi-dans-le-jardin-de-la-msh-paris-nord
-- id: bbdmi-2024-garden-concert
-  section: performances
-  when: "2024-05-31"
-  title: BBDMI concert in the garden
-  sub: MSH Paris Nord, Saint-Denis, FR. With the BBDMI team
-  url: https://openagenda.com/eu/rdvj/events/concert-dans-le-jardin-de-la-msh-paris-nord-8243735
+
 - id: bbdmi-2022-tokyo
   section: presentations
   when: "2022-03-07"
-  title: BBDMI project, Max Summer School (online)
-  sub: GEIDAI x Global, Tokyo University of the Arts, JP. Max system for BBDMI. With David Fierro
+  title: Max Summer School 2022
+  sub: BBDMI project, Tokyo University of the Arts, JP
   url: https://maxsummer2022.geidai.ac.jp/en/instructors/
-- id: bbdmi-2022-insolites
-  section: presentations
-  when: "2022-10-07"
-  title: BBDMI workshop, CNRS Visites insolites
-  sub: MSH Paris Nord, Saint-Denis, FR. With the BBDMI team
-  url: https://visitesinsolites.cnrs.fr/visite/faire-de-la-musique-avec-lelectricite-du-corps-et-du-cerveau-bbdmi-2/
-- id: jim-2023-concert
-  section: performances
-  when: "2023-05-23"
-  title: JIM 2023 concert
-  sub: MSH Paris Nord, Saint-Denis, FR. Max system and technical support
-  url: https://bbdmi.nakala.fr/content/evenements-et-publications
+
 - id: deplacement-2024-arsmusica
   section: performances
   when: "2024-11-19"
   title: Déplacement, Atau Tanaka and Erämaa Trio
-  sub: Ars Musica, Théâtre Marni, Brussels, BE. Score and Max patch
+  sub: Ars Musica, Théâtre Marni, Brussels, BE
   url: https://github.com/ataut/deplacement-eramaa

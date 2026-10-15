@@ -1,10 +1,14 @@
 ---
-interface Props { rows: [string, string, string?][] }
+// A value is plain text, or a list of links shown on one line.
+type Link = { label: string; url: string };
+interface Props { rows: [string, string | Link[], string?][] }
 
 const { rows } = Astro.props;
 ---
 <dl class="panel meta">
   {rows.map(([key, value, href]) => (
-    <Fragment><dt class="label">{key}</dt><dd>{href ? <a href={href}>{value}</a> : value}</dd></Fragment>
+    <Fragment><dt class="label">{key}</dt><dd>{typeof value !== "string"
+      ? value.map((l, i) => <Fragment>{i > 0 && " · "}<a href={l.url}>{l.label}</a></Fragment>)
+      : href ? <a href={href}>{value}</a> : value}</dd></Fragment>
   ))}
 </dl>

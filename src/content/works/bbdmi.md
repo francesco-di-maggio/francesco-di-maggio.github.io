@@ -1,9 +1,9 @@
 ---
 title: "Body Brain Digital Musical Instrument"
-summary: "Making music with brain and body electricity."
+summary: "A digital musical instrument played with muscle and brain signals."
 start: 2022
 end: 2024
-role: "Research engineer, CNRS, MSH Paris Nord"
+role: "Research Engineer, CNRS · Max environment, EMG/EEG-to-sound interaction design and machine learning"
 links:
   - { label: "Website", url: "https://bbdmi.nakala.fr/" }
   - { label: "GitLab", url: "https://gitlab.huma-num.fr/bbdmi/bbdmi" }
@@ -12,6 +12,6 @@ images:
   - { src: "bbdmi-2.jpg", alt: "EMG with the EAVI board", caption: "EAVI board, EMG" }
 ---
 
-The use of physiological signals from the human brain and body in human-computer interaction has become a major research area in physiological computing. Musicians have been at the forefront of the development of digital musical instruments adopting physiological interfaces, but their efforts have remained at the experimental level, often isolated from the relevant scientific communities.
+BBDMI is a digital musical instrument that makes music from the electrical activity of muscles (EMG) and the brain (EEG). It is funded by the ANR and led by Anne Sèdes at MSH Paris Nord.
 
-The Body Brain Digital Musical Instrument (BBDMI) project aims to develop a digital musical instrument using electrophysiological signals from the human body: the electromyogram (EMG) from muscle contraction and the electroencephalogram (EEG) from brain activity. It combines musical organology with biomedical technologies in a modular and accessible manner to make a system that can be used by musicians, artists and educators without specialised knowledge in neuroscience and signal analysis. The instrument will represent a new interface for musical creation that can benefit several distinct user communities: experimental musicians, instrumentalists, and cultural mediation practitioners working in the world of autism and disabled audiences.
+I developed its interactive modular system in Max: modules for acquiring, processing and mapping EMG and EEG signals, from the EAVI board, to sound synthesis and control in real time. The system combines signal analysis with interactive machine learning, so users can explore and refine how body signals map to sound. Example patches, documentation and source code are in the open repository.

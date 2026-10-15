@@ -11,6 +11,6 @@ export async function works() {
 
 export function years(w: Work) {
   const { start, end } = w.data;
-  if (end === undefined) return `${start}–`;
+  if (end === undefined) return `${start}–present`;
   return start === end ? `${start}` : `${start}–${end}`;
 }

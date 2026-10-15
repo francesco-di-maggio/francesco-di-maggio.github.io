@@ -1,6 +1,12 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import Base from "../layouts/Base.astro";
+import { url } from "../url";
+import Citation from "../components/Citation.astro";
+import { publications } from "../publications";
+
+type Entry = CollectionEntry<"cv">;
+type Group = NonNullable<Entry["data"]["group"]>;
 
 const SECTIONS = {
   work: "Work",
@@ -10,18 +16,73 @@ const SECTIONS = {
   presentations: "Presentations",
 } as const;
 
+// Repeated events collapse into one row that opens to the dates.
+const GROUPS: Record<Group, { title: string; sub: string; noun: string; work?: string }> = {
+  monolith: { title: "Monolith", sub: "With Sofie Kramer and Mári Mákó", noun: "shows", work: "monolith" },
+  "a-pole-tragedy": { title: "A Pole Tragedy", sub: "With Sofie Kramer and Mári Mákó", noun: "shows", work: "a-pole-tragedy" },
+};
+
 // Newest first: `when` starts with the year, so text order is date order.
 const entries = (await getCollection("cv")).sort((a, b) => b.data.when.localeCompare(a.data.when));
+
+// A section's rows: single entries, and one row per group at the place of its newest entry.
+function rows(section: string) {
+  const seen = new Set<Group>();
+  const out: (Entry | { group: Group; items: Entry[] })[] = [];
+  for (const e of entries.filter((e) => e.data.section === section)) {
+    const g = e.data.group;
+    if (!g) { out.push(e); continue; }
+    if (seen.has(g)) continue;
+    seen.add(g);
+    out.push({ group: g, items: entries.filter((x) => x.data.group === g) });
+  }
+  return out;
+}
+
+const pubs = await publications();
+
+const year = (e: Entry) => e.data.when.slice(0, 4);
+const span = (items: Entry[]) => {
+  const first = year(items[items.length - 1]);
+  const last = year(items[0]);
+  return first === last ? first : `${first}–${last}`;
+};
 ---
 <Base title="CV" description="CV of Francesco Di Maggio.">
-  <h1>CV</h1>
-  <p class="lead">Work, teaching, education, performances and presentations.</p>
+  <div class="print-only">
+    <h1>Francesco Di Maggio</h1>
+    <p class="lead">PhD Candidate in Industrial Design, TU/e · Digital Luthier</p>
+    <p class="label">f.di.maggio@tue.nl · github.com/francesco-di-maggio · linkedin.com/in/francesco-di-maggio</p>
+  </div>
+  <h1 class="screen-only">CV</h1>
+  <p class="lead screen-only">Work, teaching, education, performances and presentations. <button id="pdf" class="label" type="button">PDF ↓</button></p>
   {Object.entries(SECTIONS).map(([key, title]) => (
     <Fragment>
       <h2 class="label">{title}</h2>
       <div class="panel lists">
         <ul class="list">
-          {entries.filter((e) => e.data.section === key).map((e) => {
+          {rows(key).map((r) => {
+            if ("group" in r) {
+              const g = GROUPS[r.group];
+              return (
+                <li id={r.group}><details class="group">
+                  <summary class="row">
+                    <span class="text"><b>{g.title}</b><span class="sub">{r.items.length} {g.noun}. {g.sub}</span></span>
+                    <span class="label">{span(r.items)}<span class="toggle" aria-hidden="true"></span></span>
+                  </summary>
+                  <ul class="list">
+                    {r.items.map((e) => (
+                      <li id={e.id}><a class="row" href={e.data.url}>
+                        <span class="text"><span class="sub">{e.data.sub}</span></span>
+                        <span class="label">{e.data.when}</span>
+                      </a></li>
+                    ))}
+                    {g.work && <li class="screen-only"><a class="row" href={url(`works/${g.work}/`)}><span class="text"><span class="sub">Work page</span></span><span class="arrow">→</span></a></li>}
+                  </ul>
+                </details></li>
+              );
+            }
+            const e = r;
             const text = <span class="text"><b>{e.data.title}</b>{e.data.sub && <span class="sub">{e.data.sub}</span>}</span>;
             const when = <span class="label">{e.data.when}</span>;
             return <li id={e.id}>{e.data.url ? <a class="row" href={e.data.url}>{text}{when}</a> : <div class="row">{text}{when}</div>}</li>;
@@ -30,4 +91,33 @@ const entries = (await getCollection("cv")).sort((a, b) => b.data.when.localeCom
       </div>
     </Fragment>
   ))}
+  <section class="print-only">
+    <h2 class="label">Publications</h2>
+    <ul class="list">{pubs.map((p) => <Citation pub={p} />)}</ul>
+  </section>
 </Base>
+<script>
+  // A link to one show opens its group.
+  function openTarget() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (!id) return;
+    const target = document.getElementById(id);
+    const group = target?.closest("details");
+    if (!target || !group) return;
+    group.open = true;
+    target.scrollIntoView();
+  }
+  document.addEventListener("astro:page-load", openTarget);
+  document.addEventListener("astro:page-load", () => document.getElementById("pdf")?.addEventListener("click", () => print()));
+
+  // On paper every group is open; afterwards each returns to how it was.
+  let closed: HTMLDetailsElement[] = [];
+  window.addEventListener("beforeprint", () => {
+    closed = [...document.querySelectorAll<HTMLDetailsElement>("details.group:not([open])")];
+    for (const d of closed) d.open = true;
+  });
+  window.addEventListener("afterprint", () => {
+    for (const d of closed) d.open = false;
+  });
+  window.addEventListener("hashchange", openTarget);
+</script>

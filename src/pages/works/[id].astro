@@ -6,18 +6,20 @@ import { url } from "../../url";
 import { works, years, type Work } from "../../works";
 
 export async function getStaticPaths() {
-  return (await works()).map((work) => ({ params: { id: work.id }, props: { work } }));
+  const all = await works();
+  return all.map((work, i) => ({ params: { id: work.id }, props: { work, prev: all[i - 1], next: all[i + 1] } }));
 }
 
-const { work } = Astro.props as { work: Work };
+const { work, prev, next } = Astro.props as { work: Work; prev?: Work; next?: Work };
 const { Content } = await render(work);
 const d = work.data;
-const rows: [string, string, string?][] = [
+const rows: [string, string | typeof d.links][] = [
   ["Years", years(work)],
   ...(d.role ? [["Role", d.role] as [string, string]] : []),
   ...(d.with ? [["With", d.with] as [string, string]] : []),
-  ...d.links.map((l) => ["Link", l.label, l.url] as [string, string, string]),
+  ...(d.links.length ? [["Links", d.links] as [string, typeof d.links]] : []),
 ];
+const src = (file: string) => url(`images/${file}`).replace(/\/$/, "");
 ---
 <Base title={d.title} description={d.summary}>
   <span class="label"><a class="crumb" href={url("works/")}>Works</a> · {years(work)}</span>
@@ -31,13 +33,18 @@ const rows: [string, string, string?][] = [
   {d.video && <iframe class="video" src={d.video} title={d.title} loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>}
 
   {d.images.length > 0 && (
-    <div class="media">
+    <div class:list={["gallery", { single: d.images.length === 1 }]}>
       {d.images.map((i) => (
-        <figure class="media">
-          <img src={url(`images/${i.src}`).replace(/\/$/, "")} alt={i.alt} loading="lazy" />
+        <figure>
+          <a href={src(i.src)}><img src={src(i.src)} alt={i.alt} loading="lazy" /></a>
           {i.caption && <figcaption>{i.caption}</figcaption>}
         </figure>
       ))}
     </div>
   )}
+
+  <div class="pager">
+    {prev && <a href={url(`works/${prev.id}/`)}><span class="label">← Previous</span><b>{prev.data.title}</b></a>}
+    {next && <a href={url(`works/${next.id}/`)}><span class="label">Next →</span><b>{next.data.title}</b></a>}
+  </div>
 </Base>

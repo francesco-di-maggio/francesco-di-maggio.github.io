@@ -22,11 +22,12 @@ header { display: flex; align-items: center; justify-content: space-between; gap
 .mark { display: flex; align-items: center; gap: 8px; font: 600 13px var(--mono); letter-spacing: 0.04em; text-decoration: none; text-transform: uppercase; white-space: nowrap; }
 .mark::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
 .end { display: flex; align-items: center; gap: 2px; }
-.icon, #theme { flex: none; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;
+/* 28 px high in the layout, as on tsost; the tap area reaches 4 px above and below. */
+.icon, #theme { flex: none; width: 32px; height: 36px; margin: -4px 0; display: flex; align-items: center; justify-content: center;
          padding: 0; border: 0; background: none; color: var(--dim); cursor: pointer; }
 .icon { color: var(--dim); }
 /* Small phones: name and five buttons on one line. */
-@media (max-width: 359px) { .end { gap: 0; } .icon, #theme { width: 24px; } .mark { letter-spacing: 0; } }
+@media (max-width: 374px) { .end { gap: 0; } .icon, #theme { width: 22px; } .mark { letter-spacing: 0; } }
 .icon:hover { color: var(--ink); }
 .icon svg { width: 16px; height: 16px; }
 #theme svg { display: none; }
@@ -106,11 +107,57 @@ a.panel .title { display: block; margin: 2px 0; font-size: 16px; line-height: 22
 .cite .links a:hover { color: var(--ink); }
 .cite .award { color: var(--ink); }
 
-.media { display: grid; gap: 10px; margin: 0; }
-.media img { display: block; width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface); }
-.media figcaption { margin-top: 6px; font-size: 14px; color: var(--dim); }
+/* Work images: a grid of equal crops; each opens full size. One image keeps its own proportions, up to a limit. */
+.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.gallery figure { margin: 0; }
+.gallery img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface); }
+.gallery.single { grid-template-columns: 1fr; }
+.gallery.single img { aspect-ratio: auto; max-height: 520px; object-fit: contain; }
+.gallery figcaption { margin-top: 6px; font-size: 14px; color: var(--dim); }
 .video { aspect-ratio: 16 / 9; width: 100%; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
 
 footer { display: flex; justify-content: space-between; gap: 12px; margin-top: min(20px, 3vh); padding-top: 10px; border-top: 1px solid var(--line); }
 footer a { text-decoration: none; }
 footer a:hover { color: var(--ink); }
+
+/* CV groups: one row that opens to its dates. */
+.group summary { cursor: pointer; list-style: none; }
+.group summary::-webkit-details-marker { display: none; }
+.group .toggle::before { content: "+"; display: inline-block; width: 10px; margin-left: 8px; color: var(--dim); }
+.group[open] .toggle::before { content: "−"; }
+.group summary:hover b { text-decoration: underline; text-decoration-color: var(--dim); text-underline-offset: 3px; }
+.group > .list { margin: 0 0 8px; padding-left: 14px; border-left: 1px solid var(--line); }
+.group > .list .row { min-height: 40px; padding: 8px 0; }
+
+/* Previous and next work. */
+.pager { display: flex; justify-content: space-between; gap: 16px; margin-top: min(16px, 2vh); }
+.pager a { display: flex; flex-direction: column; gap: 2px; max-width: 48%; text-decoration: none; }
+.pager a:last-child { margin-left: auto; text-align: right; }
+.pager b { font-size: 15px; line-height: 20px; font-weight: 600; }
+.pager a:hover b { text-decoration: underline; text-decoration-color: var(--dim); text-underline-offset: 3px; }
+.cite strong { font-weight: 600; color: var(--ink); }
+
+#pdf { margin-left: 8px; padding: 0; border: 0; background: none; color: var(--ink); cursor: pointer; }
+#pdf:hover { text-decoration: underline; text-underline-offset: 3px; }
+.print-only { display: none; }
+
+/* Paper: black on white, one column, no site chrome. Links stay clickable in the PDF. */
+@media print {
+  @page { margin: 16mm; }
+  :root { --bg: #fff; --surface: #fff; --ink: #000; --dim: #555; --line: #ddd; }
+  html, body { background: #fff; }
+  body { max-width: none; padding: 0; font-size: 10pt; min-height: 0; }
+  header, nav, footer, #search, #pdf, .toggle, .pager { display: none !important; }
+  .print-only { display: block; }
+  .screen-only { display: none !important; }
+  .cite .links a { display: none; }
+  h1 { font-size: 20pt; }
+  .lead { font-size: 10pt; }
+  .panel { border: 0; padding: 0; border-radius: 0; box-shadow: none; }
+  .panel.lists { padding: 0; }
+  .list .row { min-height: 0; padding: 4px 0; }
+  .list li { break-inside: avoid; }
+  h2.label { margin-top: 5mm; break-after: avoid; }
+  a { text-decoration: none; }
+  .group > .list { margin: 0 0 4px; }
+}
