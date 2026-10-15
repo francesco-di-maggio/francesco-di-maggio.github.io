@@ -164,6 +164,7 @@ footer a:hover { color: var(--ink); }
 
 /* Short screens: tighter spacing so Home fits without scrolling. */
 @media (max-height: 700px) {
+  .home h2.label { display: none; }
   nav { margin-bottom: 8px; }
   h1 { font-size: 26px; }
   .lead { font-size: 15px; line-height: 1.4; }

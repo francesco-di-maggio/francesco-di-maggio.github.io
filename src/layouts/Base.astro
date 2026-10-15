@@ -8,9 +8,10 @@ import { getCollection } from "astro:content";
 interface Props {
   title?: string;
   description?: string;
+  home?: boolean;
 }
 
-const { title, description = "Francesco Di Maggio: researcher and digital luthier. PhD candidate in Industrial Design, TU Eindhoven." } = Astro.props;
+const { title, home = false, description = "Francesco Di Maggio: researcher and digital luthier. PhD candidate in Industrial Design, TU Eindhoven." } = Astro.props;
 const pageTitle = title ? `${title} · Francesco Di Maggio` : "Francesco Di Maggio";
 const path = Astro.url.pathname;
 const nav = [
@@ -45,7 +46,7 @@ const nav = [
 <meta name="twitter:card" content="summary_large_image">
 <ClientRouter />
 </head>
-<body>
+<body class:list={{ home }}>
 <header transition:persist="header">
   <a class="mark" href={url()}>Francesco Di Maggio</a>
   <div class="end">
