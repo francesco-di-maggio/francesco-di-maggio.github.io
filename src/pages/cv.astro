@@ -107,8 +107,9 @@ const span = (items: Entry[]) => {
     group.open = true;
     target.scrollIntoView();
   }
-  document.addEventListener("astro:page-load", openTarget);
-  document.addEventListener("astro:page-load", () => document.getElementById("pdf")?.addEventListener("click", () => print()));
+  openTarget();
+  window.addEventListener("hashchange", openTarget);
+  document.getElementById("pdf")?.addEventListener("click", () => print());
 
   // On paper every group is open; afterwards each returns to how it was.
   let closed: HTMLDetailsElement[] = [];
