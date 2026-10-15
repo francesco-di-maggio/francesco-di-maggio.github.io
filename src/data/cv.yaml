@@ -12,7 +12,7 @@
   url: https://www.mshparisnord.fr
 - id: gripbeats
   section: work
-  when: 2020–2022
+  when: 2020–
   title: Software Developer
   sub: GripBeats. GripBeats Desktop App
   url: https://www.gripbeats.com/
@@ -136,10 +136,10 @@
   sub: Zaal3, Het Nationale Theater, Den Haag, NL. With Sofie Kramer and Mári Mákó
   url: https://sofiekramer.nl/pole-tragedy
 - id: ircam-2021
-  section: performances
+  section: education
   when: "2021"
-  title: Computer music designer (RIM), Mixed Music Interpretation Workshop
-  sub: ManiFeste 2021, IRCAM, Paris, FR
+  title: Mixed Music Interpretation Workshop
+  sub: IRCAM, ManiFeste 2021, Paris
 
 - id: jim-2023
   section: presentations
@@ -150,12 +150,54 @@
 - id: convergence-2023
   section: presentations
   when: "2023-04-21"
-  title: Convergence (workshop)
-  sub: ARIA, Antwerp Research Institute for the Arts, Antwerp, BE
-  url: https://www.uantwerpen.be/en/research-groups/aria/activities/research-seminars/convergence2023/
-- id: je-ia-2022
+  title: Convergence 2023 (seminar)
+  sub: Royal Conservatoire Antwerp, BE. Body-Brain Digital Musical Instrument, with David Fierro
+  url: https://www.ap-arts.be/en/event/convergence-2023
+- id: je-ia-2023
   section: presentations
-  when: "2022-03-27"
+  when: "2023-03-27"
   title: Journée d'étude Intelligence Artificielle
   sub: MSH Paris Nord, Saint-Denis, FR
   url: https://www.mshparisnord.fr/event/je-ia-entre-arts-et-sciences-musique-et-mathematiques/
+- id: bbdmi-2023-insolites
+  section: presentations
+  when: "2023-10-12"
+  title: BBDMI workshop, CNRS Visites insolites
+  sub: MSH Paris Nord, Saint-Denis, FR. With the BBDMI team
+  url: https://univ-paris8.fr/Visite-insolite-a-la-MSH-Paris-Nord
+- id: bbdmi-2024-garden-workshop
+  section: presentations
+  when: "2024-05-31"
+  title: BBDMI workshop in the garden
+  sub: MSH Paris Nord, Saint-Denis, FR. With the BBDMI team
+  url: https://openagenda.com/ca/rdvj/events/atelier-bbdmi-dans-le-jardin-de-la-msh-paris-nord
+- id: bbdmi-2024-garden-concert
+  section: performances
+  when: "2024-05-31"
+  title: BBDMI concert in the garden
+  sub: MSH Paris Nord, Saint-Denis, FR. With the BBDMI team
+  url: https://openagenda.com/eu/rdvj/events/concert-dans-le-jardin-de-la-msh-paris-nord-8243735
+- id: bbdmi-2022-tokyo
+  section: presentations
+  when: "2022-03-07"
+  title: BBDMI project, Max Summer School (online)
+  sub: GEIDAI x Global, Tokyo University of the Arts, JP. Max system for BBDMI. With David Fierro
+  url: https://maxsummer2022.geidai.ac.jp/en/instructors/
+- id: bbdmi-2022-insolites
+  section: presentations
+  when: "2022-10-07"
+  title: BBDMI workshop, CNRS Visites insolites
+  sub: MSH Paris Nord, Saint-Denis, FR. With the BBDMI team
+  url: https://visitesinsolites.cnrs.fr/visite/faire-de-la-musique-avec-lelectricite-du-corps-et-du-cerveau-bbdmi-2/
+- id: jim-2023-concert
+  section: performances
+  when: "2023-05-23"
+  title: JIM 2023 concert
+  sub: MSH Paris Nord, Saint-Denis, FR. Max system and technical support
+  url: https://bbdmi.nakala.fr/content/evenements-et-publications
+- id: deplacement-2024-arsmusica
+  section: performances
+  when: "2024-11-19"
+  title: Déplacement, Atau Tanaka and Erämaa Trio
+  sub: Ars Musica, Théâtre Marni, Brussels, BE. Score and Max patch
+  url: https://github.com/ataut/deplacement-eramaa

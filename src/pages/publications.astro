@@ -4,7 +4,9 @@ import Base from "../layouts/Base.astro";
 
 type Pub = CollectionEntry<"publications">;
 
-const pubs = await getCollection("publications");
+// Newest first within a year; entries without a date go last.
+const time = (p: Pub) => p.data.date?.getTime() ?? 0;
+const pubs = (await getCollection("publications")).sort((a, b) => time(b) - time(a));
 const yearsDesc = [...new Set(pubs.map((p) => p.data.year))].sort((a, b) => b - a);
 const authors = (p: Pub) => p.data.authors.map((a, i) => (p.data.equal && i < p.data.equal ? `${a}*` : a)).join(", ");
 const links = (p: Pub) => [

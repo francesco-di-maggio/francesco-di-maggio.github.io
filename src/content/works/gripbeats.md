@@ -2,7 +2,6 @@
 title: "GripBeats"
 summary: "A playful wearable instrument."
 start: 2020
-end: 2022
 role: "Software developer, GripBeats Desktop App"
 links:
   - { label: "Website", url: "https://www.gripbeats.com/" }
@@ -13,4 +12,4 @@ images:
   - { src: "gripbeats-3.jpg", alt: "GripBeats" }
 ---
 
-GripBeats® isn't just any ordinary musical instrument; it's wearable. And because it's wearable, it uses your hands' movements and touch to make music. Everything you thought you could do with an instrument before you can do now, but without it!
+A wearable instrument that turns hand movement and touch into music. I develop the GripBeats Desktop App, which connects the wearable to music software.

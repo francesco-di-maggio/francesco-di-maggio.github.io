@@ -28,6 +28,7 @@ const publications = defineCollection({
     authors: z.array(z.string()),
     equal: z.number().optional(),
     year: z.number(),
+    date: z.coerce.date().optional(),
     venue: z.string(),
     kind: z.string(),
     status: z.string().optional(),
