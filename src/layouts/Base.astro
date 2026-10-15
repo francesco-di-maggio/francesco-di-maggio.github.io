@@ -21,7 +21,7 @@ const nav = [
 ];
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:animate="none">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -57,9 +57,10 @@ const nav = [
     <svg class="dark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
   </button>
   </div>
-  <!-- Inline, so the theme icon is right on the first paint. -->
+  <!-- Inline, so the theme icon and the breathing phase are right on the first paint. -->
   <script is:inline>
     try { document.getElementById("theme").dataset.state = localStorage.getItem("theme") || "auto"; } catch {}
+    document.querySelector(".mark").style.setProperty("--phase", `-${Date.now() % 3000}ms`);
   </script>
 </header>
 <div id="search" class="panel" hidden transition:persist="search">
@@ -107,6 +108,12 @@ const nav = [
   }
 
   applyTheme(storedTheme());
+
+  // The breathing follows the clock, not the page: after navigation it continues where it was.
+  function breathe() {
+    document.querySelector<HTMLElement>(".mark")?.style.setProperty("--phase", `-${Date.now() % 3000}ms`);
+  }
+  document.addEventListener("astro:after-swap", breathe);
   // Navigation replaces the <html> attributes and the head: apply the theme again.
   document.addEventListener("astro:after-swap", () => applyTheme(storedTheme()));
   button.addEventListener("click", () => {
