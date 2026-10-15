@@ -79,7 +79,7 @@ a.panel .title { display: block; margin: 4px 0; font-size: 16px; line-height: 22
 .prose.body { margin-top: 10px; }
 .caption { display: block; font-size: 15px; line-height: 20px; color: var(--dim); }
 .arrow { font: 400 18px/20px var(--mono); color: var(--dim); }
-/* Lists: one row per item inside a panel. Title and a short line on the left, one value on the right. */
+/* Lists: one row per item inside a panel. Title and short lines on the left; on the right a value, or → without one. */
 .list { margin: 0; padding: 0; list-style: none; }
 .list li + li { border-top: 1px solid var(--line); }
 .list .row { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 60px; padding: 12px 0; text-decoration: none; }
