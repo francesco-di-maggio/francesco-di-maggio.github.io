@@ -35,6 +35,8 @@ const nav = [
 <title>{pageTitle}</title>
 <meta name="description" content={description}>
 <link rel="icon" href={url("favicon.svg").replace(/\/$/, "")} type="image/svg+xml">
+<link rel="icon" href={url("favicon.png").replace(/\/$/, "")} type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href={url("apple-touch-icon.png").replace(/\/$/, "")}>
 <meta property="og:type" content="website">
 <meta property="og:title" content={pageTitle}>
 <meta property="og:description" content={description}>
@@ -72,6 +74,7 @@ const nav = [
 </main>
 <footer class="label">
   <span>© {new Date().getFullYear()} Francesco Di Maggio</span>
+  <span class="family"><a href="https://francesco-di-maggio.github.io/tsost/">TSOST</a> · <a href="https://francesco-di-maggio.github.io/mqtt-max/">mqtt-max</a></span>
 </footer>
 <script>
   import { startSearch } from "../search";

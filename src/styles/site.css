@@ -161,3 +161,16 @@ footer a:hover { color: var(--ink); }
   a { text-decoration: none; }
   .group > .list { margin: 0 0 4px; }
 }
+
+/* Short screens: tighter spacing so Home fits without scrolling. */
+@media (max-height: 700px) {
+  nav { margin-bottom: 8px; }
+  h1 { font-size: 26px; }
+  .lead { font-size: 15px; line-height: 1.4; }
+  .prose p { font-size: 15px; line-height: 1.5; }
+  footer { margin-top: 10px; }
+}
+@media (max-height: 600px) {
+  body { gap: 8px; }
+  .panel { padding-block: 12px; }
+}
