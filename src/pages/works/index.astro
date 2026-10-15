@@ -4,18 +4,27 @@ import { url } from "../../url";
 import { works, years } from "../../works";
 
 const all = await works();
+const groups = [
+  { title: "Current", items: all.filter((w) => w.data.end === undefined) },
+  { title: "Earlier", items: all.filter((w) => w.data.end !== undefined) },
+];
 ---
 <Base title="Works" description="Instruments, tools and performances by Francesco Di Maggio.">
   <h1>Works</h1>
   <p class="lead">Instruments, tools and performances.</p>
-  <div class="panel lists">
-    <ul class="list">
-      {all.map((w) => (
-        <li><a class:list={["row", { on: w.data.end === undefined }]} href={url(`works/${w.id}/`)}>
-          <span class="text"><b>{w.data.title}</b><span class="sub">{w.data.summary}</span></span>
-          <span class="label">{years(w)}</span>
-        </a></li>
-      ))}
-    </ul>
-  </div>
+  {groups.map((g) => (
+    <Fragment>
+      <h2 class="label">{g.title}</h2>
+      <div class="panel lists">
+        <ul class="list">
+          {g.items.map((w) => (
+            <li><a class:list={["row", { on: w.data.end === undefined }]} href={url(`works/${w.id}/`)}>
+              <span class="text"><b>{w.data.title}</b><span class="sub">{w.data.summary}</span></span>
+              <span class="label">{years(w)}</span>
+            </a></li>
+          ))}
+        </ul>
+      </div>
+    </Fragment>
+  ))}
 </Base>

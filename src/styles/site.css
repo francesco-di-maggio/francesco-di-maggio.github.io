@@ -20,7 +20,10 @@ a:hover { text-decoration-color: var(--ink); }
 
 header { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 28px; }
 .mark { display: flex; align-items: center; gap: 8px; font: 600 13px var(--mono); letter-spacing: 0.04em; text-decoration: none; text-transform: uppercase; white-space: nowrap; }
-.mark::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.mark::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: breathe 3s ease-in-out infinite; }
+/* The dot breathes like the TSOST ripple; still when the visitor asks for less motion. */
+@keyframes breathe { 50% { transform: scale(1.2); opacity: 0.4; } }
+@media (prefers-reduced-motion: reduce) { .mark::before { animation: none; } }
 .end { display: flex; align-items: center; gap: 2px; }
 /* 28 px high in the layout, as on tsost; the tap area reaches 4 px above and below. */
 .icon, #theme { flex: none; width: 32px; height: 36px; margin: -4px 0; display: flex; align-items: center; justify-content: center;
@@ -72,7 +75,7 @@ a.panel:active { opacity: 0.8; }
 a.panel .label { display: block; color: var(--ink); }
 /* Accent only for what is on: current work. */
 a.panel.on .label::before { content: ""; display: inline-block; width: 6px; height: 6px; margin: 0 8px 1px 0; border-radius: 50%; background: var(--accent); }
-a.panel .title { display: block; margin: 2px 0; font-size: 16px; line-height: 22px; font-weight: 600; }
+a.panel .title { display: block; margin: 4px 0; font-size: 16px; line-height: 22px; font-weight: 600; }
 .prose.body { margin-top: 10px; }
 .caption { display: block; font-size: 15px; line-height: 20px; color: var(--dim); }
 .arrow { font: 400 18px/20px var(--mono); color: var(--dim); }
@@ -80,7 +83,7 @@ a.panel .title { display: block; margin: 2px 0; font-size: 16px; line-height: 22
 .list { margin: 0; padding: 0; list-style: none; }
 .list li + li { border-top: 1px solid var(--line); }
 .list .row { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 60px; padding: 12px 0; text-decoration: none; }
-.list .text { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.list .text { flex: 1; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .list b { font-size: 15px; line-height: 20px; font-weight: 600; text-wrap: balance; }
 .list .sub { font-size: 14px; line-height: 18px; color: var(--dim); }
 .list a.row:hover b { text-decoration: underline; text-decoration-color: var(--dim); text-underline-offset: 3px; }
@@ -97,13 +100,9 @@ a.panel .title { display: block; margin: 2px 0; font-size: 16px; line-height: 22
 .meta dt { margin: 0; }
 .meta dd { margin: 0; overflow-wrap: anywhere; }
 
-/* Publications: the citation is the row; links sit under it. */
-.cite { display: flex; flex-direction: column; gap: 4px; padding: 12px 0; font-size: 15px; line-height: 20px; }
-.cite .sub { font-size: 14px; line-height: 18px; color: var(--dim); }
-.cite .links { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 2px; }
-.cite .links a { text-decoration: none; }
-.cite .links a:hover { color: var(--ink); }
-.cite .award { color: var(--ink); }
+/* Publications: your name in bold; an award as its own line. */
+.list .sub strong { font-weight: 600; color: var(--ink); }
+.list .award { color: var(--ink); }
 
 /* Work images: a grid of equal crops; each opens full size. One image keeps its own proportions, up to a limit. */
 .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -118,7 +117,7 @@ footer { display: flex; justify-content: space-between; gap: 12px; margin-top: m
 footer a { text-decoration: none; }
 footer a:hover { color: var(--ink); }
 footer .links { display: flex; align-items: center; gap: 14px; }
-footer .links a { display: flex; color: var(--dim); }
+footer .links a { display: flex; padding: 7px; margin: -7px; color: var(--dim); }
 footer .links svg { width: 14px; height: 14px; }
 
 /* CV groups: one row that opens to its dates. */
@@ -132,11 +131,10 @@ footer .links svg { width: 14px; height: 14px; }
 
 /* Previous and next work. */
 .pager { display: flex; justify-content: space-between; gap: 16px; margin-top: min(16px, 2vh); }
-.pager a { display: flex; flex-direction: column; gap: 2px; max-width: 48%; text-decoration: none; }
+.pager a { display: flex; flex-direction: column; gap: 4px; max-width: 48%; text-decoration: none; }
 .pager a:last-child { margin-left: auto; text-align: right; }
 .pager b { font-size: 15px; line-height: 20px; font-weight: 600; }
 .pager a:hover b { text-decoration: underline; text-decoration-color: var(--dim); text-underline-offset: 3px; }
-.cite strong { font-weight: 600; color: var(--ink); }
 
 #pdf { margin-left: 8px; padding: 0; border: 0; background: none; color: var(--ink); cursor: pointer; }
 #pdf:hover { text-decoration: underline; text-underline-offset: 3px; }
@@ -151,7 +149,6 @@ footer .links svg { width: 14px; height: 14px; }
   header, nav, footer, #search, #pdf, .toggle, .pager { display: none !important; }
   .print-only { display: block; }
   .screen-only { display: none !important; }
-  .cite .links a { display: none; }
   h1 { font-size: 20pt; }
   .lead { font-size: 10pt; }
   .panel { border: 0; padding: 0; border-radius: 0; box-shadow: none; }
@@ -161,18 +158,4 @@ footer .links svg { width: 14px; height: 14px; }
   h2.label { margin-top: 5mm; break-after: avoid; }
   a { text-decoration: none; }
   .group > .list { margin: 0 0 4px; }
-}
-
-/* Short screens: tighter spacing so Home fits without scrolling. */
-@media (max-height: 700px) {
-  .home h2.label { display: none; }
-  nav { margin-bottom: 8px; }
-  h1 { font-size: 26px; }
-  .lead { font-size: 15px; line-height: 1.4; }
-  .prose p { font-size: 15px; line-height: 1.5; }
-  footer { margin-top: 10px; }
-}
-@media (max-height: 600px) {
-  body { gap: 8px; }
-  .panel { padding-block: 12px; }
 }

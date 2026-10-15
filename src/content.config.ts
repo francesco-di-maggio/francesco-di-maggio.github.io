@@ -20,23 +20,33 @@ const works = defineCollection({
   }),
 });
 
-// `equal`: how many of the first authors contributed equally. `tsost`: the id of the entry on the tsost site.
-const publications = defineCollection({
-  loader: file("src/data/publications.yaml"),
-  schema: z.object({
-    title: z.string(),
-    authors: z.array(z.string()),
-    equal: z.number().optional(),
-    year: z.number(),
-    date: z.coerce.date().optional(),
-    venue: z.string(),
-    kind: z.string(),
-    status: z.string().optional(),
-    award: z.string().optional(),
-    doi: z.string().optional(),
-    url: z.url().optional(),
-    tsost: z.string().optional(),
-  }),
+// Publications: earlier papers here, PhD papers from tsost (one source; edit them there).
+// `equal`: how many of the first authors contributed equally.
+const publication = z.object({
+  title: z.string(),
+  authors: z.array(z.string()),
+  equal: z.number().optional(),
+  year: z.number(),
+  date: z.coerce.date().optional(),
+  venue: z.string(),
+  kind: z.string(),
+  status: z.string().optional(),
+  award: z.string().optional(),
+  doi: z.string().optional(),
+  url: z.url().optional(),
+});
+
+const publications = defineCollection({ loader: file("src/data/publications.yaml"), schema: publication });
+
+// TSOST_URL points the build at a local tsost for testing.
+const tsost = process.env.TSOST_URL ?? "https://francesco-di-maggio.github.io/tsost";
+const phd = defineCollection({
+  loader: async () => {
+    const res = await fetch(`${tsost}/publications.json`);
+    if (!res.ok) throw new Error(`tsost publications: ${res.status} ${res.url}`);
+    return res.json();
+  },
+  schema: publication,
 });
 
 const cv = defineCollection({
@@ -51,4 +61,4 @@ const cv = defineCollection({
   }),
 });
 
-export const collections = { works, publications, cv };
+export const collections = { works, publications, phd, cv };

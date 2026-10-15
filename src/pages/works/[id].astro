@@ -44,7 +44,7 @@ const src = (file: string) => url(`images/${file}`).replace(/\/$/, "");
   )}
 
   <div class="pager">
-    {prev && <a href={url(`works/${prev.id}/`)}><span class="label">← Previous</span><b>{prev.data.title}</b></a>}
-    {next && <a href={url(`works/${next.id}/`)}><span class="label">Next →</span><b>{next.data.title}</b></a>}
+    {prev && <a href={url(`works/${prev.id}/`)}><span class="label"><span aria-hidden="true">←</span> Previous</span><b>{prev.data.title}</b></a>}
+    {next && <a href={url(`works/${next.id}/`)}><span class="label">Next <span aria-hidden="true">→</span></span><b>{next.data.title}</b></a>}
   </div>
 </Base>

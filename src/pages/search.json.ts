@@ -1,5 +1,6 @@
 import { getCollection } from "astro:content";
 import { url } from "../url";
+import { publications as all } from "../publications";
 
 // One entry per work, publication and CV line. `find` is what the search matches; it is not shown.
 export async function GET() {
@@ -10,7 +11,7 @@ export async function GET() {
     href: url(`works/${w.id}/`),
     find: [w.data.title, w.data.summary, w.data.role, w.data.with, w.body].join(" "),
   }));
-  const publications = (await getCollection("publications")).map((p) => ({
+  const publications = (await all()).map((p) => ({
     type: "Publication",
     title: p.data.title,
     text: `${p.data.venue} · ${p.data.kind}`,

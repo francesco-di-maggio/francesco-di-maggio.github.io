@@ -55,7 +55,7 @@ const span = (items: Entry[]) => {
     <p class="label">f.di.maggio@tue.nl · github.com/francesco-di-maggio · linkedin.com/in/francesco-di-maggio</p>
   </div>
   <h1 class="screen-only">CV</h1>
-  <p class="lead screen-only">Work, teaching, education, performances and presentations. <button id="pdf" class="label" type="button">PDF ↓</button></p>
+  <p class="lead screen-only">Work, teaching, education, performances and presentations. <button id="pdf" class="label" type="button">PDF <span aria-hidden="true">↓</span></button></p>
   {Object.entries(SECTIONS).map(([key, title]) => (
     <Fragment>
       <h2 class="label">{title}</h2>
@@ -77,7 +77,7 @@ const span = (items: Entry[]) => {
                         <span class="label">{e.data.when}</span>
                       </a></li>
                     ))}
-                    {g.work && <li class="screen-only"><a class="row" href={url(`works/${g.work}/`)}><span class="text"><span class="sub">Work page</span></span><span class="arrow">→</span></a></li>}
+                    {g.work && <li class="screen-only"><a class="row" href={url(`works/${g.work}/`)}><span class="text"><span class="sub">Work page</span></span><span class="arrow" aria-hidden="true">→</span></a></li>}
                   </ul>
                 </details></li>
               );

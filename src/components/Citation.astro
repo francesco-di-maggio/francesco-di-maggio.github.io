@@ -6,20 +6,17 @@ interface Props { pub: Pub }
 const ME = "Francesco Di Maggio";
 const { pub: p } = Astro.props;
 const star = (i: number) => (p.data.equal && i < p.data.equal ? "*" : "");
-const links = [
-  ...(p.data.doi ? [{ label: "DOI", url: `https://doi.org/${p.data.doi}` }] : []),
-  ...(p.data.url ? [{ label: "Link", url: p.data.url }] : []),
-  ...(p.data.tsost ? [{ label: "TSOST", url: `https://francesco-di-maggio.github.io/tsost/publications/${p.data.tsost}/` }] : []),
-];
+// The row opens the paper: its DOI, otherwise its page.
+const link = p.data.doi ? `https://doi.org/${p.data.doi}` : p.data.url!;
 ---
-<li class="cite" id={p.id}>
-  <b>{p.data.title}</b>
-  <span class="sub">{p.data.authors.map((a, i) => (
-    <Fragment>{i > 0 && ", "}{a === ME ? <strong>{a}</strong> : a}{star(i)}</Fragment>
-  ))}</span>
-  <span class="sub">{[p.data.venue, p.data.kind, p.data.status].filter(Boolean).join(" · ")}</span>
-  <span class="links label">
-    {p.data.award && <span class="award">{p.data.award}</span>}
-    {links.map((l) => <a href={l.url}>{l.label} →</a>)}
+<li id={p.id}><a class="row" href={link}>
+  <span class="text">
+    <b>{p.data.title}</b>
+    <span class="sub">{p.data.authors.map((a, i) => (
+      <Fragment>{i > 0 && ", "}{a === ME ? <strong>{a}</strong> : a}{star(i)}</Fragment>
+    ))}</span>
+    <span class="sub">{[p.data.venue, p.data.kind, p.data.status].filter(Boolean).join(" · ")}</span>
+    {p.data.award && <span class="label award">{p.data.award}</span>}
   </span>
-</li>
+  <span class="arrow" aria-hidden="true">→</span>
+</a></li>

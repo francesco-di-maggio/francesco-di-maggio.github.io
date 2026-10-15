@@ -8,15 +8,14 @@ const years = [...new Set(pubs.map((p) => p.data.year))];
 ---
 <Base title="Publications" description="Papers, workshops and book chapters by Francesco Di Maggio.">
   <h1>Publications</h1>
-  <p class="lead">Papers, workshops and book chapters. * Equal contribution.</p>
+  <p class="lead">Papers, workshops and book chapters.</p>
   {years.map((y) => (
     <Fragment>
       <h2 class="label">{y}</h2>
       <div class="panel lists">
-        <ul class="list">
-          {pubs.filter((p) => p.data.year === y).map((p) => <Citation pub={p} />)}
-        </ul>
+        <ul class="list">{pubs.filter((p) => p.data.year === y).map((p) => <Citation pub={p} />)}</ul>
       </div>
     </Fragment>
   ))}
+  <p class="caption">* Equal contribution.</p>
 </Base>

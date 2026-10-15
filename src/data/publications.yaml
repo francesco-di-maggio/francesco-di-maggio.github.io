@@ -1,65 +1,3 @@
-- id: nime26-aerophone-kit
-  title: "The Aerophone Kit: A Toolkit for Pneumatic Musical Instrument Design"
-  authors: [Francesco Di Maggio, Catharina Maria van Riet, Sergio Picella, Berry Eggen, Bart Hengeveld]
-  equal: 2
-  year: 2026
-  date: 2026-06-24
-  venue: "NIME '26, London, UK"
-  kind: Paper
-  doi: 10.5281/zenodo.20784244
-  tsost: nime26-aerophone-kit
-
-- id: nime26-workshop-fun
-  title: "What Makes it Fun? Mapping Playful Interaction in Music-Making with AI"
-  authors: [Jingjing Sun, Francesco Di Maggio, Rebecca Fiebrink, Corey Ford, Bart Hengeveld, Sebastian Deterding]
-  equal: 2
-  year: 2026
-  date: 2026-06-24
-  venue: "NIME '26, London, UK"
-  kind: Workshop
-  url: https://nime2026.org/proceedings/692.html
-  tsost: nime26-workshop-fun
-
-- id: tei26-tesi
-  title: "TESI: A Toolkit for Tangible and Embodied Sound Interaction"
-  authors: [Francesco Di Maggio, Bart Hengeveld, Mathias Funk, Rebecca Fiebrink]
-  year: 2026
-  date: 2026-03-08
-  venue: "TEI '26, Chicago, IL, USA"
-  kind: Paper
-  doi: 10.1145/3731459.3779334
-  tsost: tei26-tesi
-
-- id: iberdiscap25-emg-sonification
-  title: "Electromyographic & Movement Sonification: Musical Embodiment as a Tool for Functional Rehabilitation in Children with Spinal Cord Injury"
-  authors: [José Manuel Corredera, Francesco Di Maggio, Atau Tanaka, Elisa López-Dolado]
-  year: 2026
-  date: 2026-05-01
-  venue: "IBERDISCAP 2025, Seville, Spain. Springer, Biosystems & Biorobotics 36"
-  kind: Book chapter
-  url: https://link.springer.com/978-3-032-18746-8
-  tsost: iberdiscap25-emg-sonification
-
-- id: nime25-embedded-comparo
-  title: "Embedded Comparo: Small DSP Systems Side-by-Side"
-  authors: [Francesco Di Maggio, Bart Hengeveld, Atau Tanaka]
-  year: 2025
-  date: 2025-06-24
-  venue: "NIME '25, Canberra, Australia"
-  kind: Paper
-  url: https://zenodo.org/records/15698940
-  tsost: nime25-embedded-comparo
-
-- id: tei25-decentralized-tuis
-  title: "Making Sense of Decentralized TUIs: A Modular Sound-Centric Approach"
-  authors: [Francesco Di Maggio, Bart Hengeveld, Mathias Funk]
-  year: 2025
-  date: 2025-03-04
-  venue: "TEI '25, Bordeaux, France"
-  kind: Workshop
-  doi: 10.1145/3689050.3708332
-  tsost: tei25-decentralized-tuis
-
 - id: am23-modular-system
   title: "An Interactive Modular System for Electrophysiological DMIs"
   authors: [Francesco Di Maggio, Atau Tanaka, David Fierro, Stephen Whitmarsh]
@@ -84,6 +22,6 @@
   authors: [Atau Tanaka, Anne Sèdes, Alain Bonardi, Stephen Whitmarsh, David Fierro, Francesco Di Maggio]
   year: 2023
   date: 2023-05-16
-  venue: "ISEA 2023, Paris, France"
+  venue: "ISEA '23, Paris, France"
   kind: Paper
   url: https://hal.science/hal-04259596
