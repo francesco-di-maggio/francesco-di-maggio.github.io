@@ -1,0 +1,21 @@
+---
+import Base from "../../layouts/Base.astro";
+import { url } from "../../url";
+import { works, years } from "../../works";
+
+const all = await works();
+---
+<Base title="Works" description="Instruments, tools and performances by Francesco Di Maggio.">
+  <h1>Works</h1>
+  <p class="lead">Instruments, tools and performances.</p>
+  <div class="panel lists">
+    <ul class="list">
+      {all.map((w) => (
+        <li><a class:list={["row", { on: w.data.end === undefined }]} href={url(`works/${w.id}/`)}>
+          <span class="text"><b>{w.data.title}</b><span class="sub">{w.data.summary}</span></span>
+          <span class="label">{years(w)}</span>
+        </a></li>
+      ))}
+    </ul>
+  </div>
+</Base>

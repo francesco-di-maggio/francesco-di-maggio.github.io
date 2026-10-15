@@ -1,0 +1,43 @@
+---
+import { render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import Facts from "../../components/Facts.astro";
+import { url } from "../../url";
+import { works, years, type Work } from "../../works";
+
+export async function getStaticPaths() {
+  return (await works()).map((work) => ({ params: { id: work.id }, props: { work } }));
+}
+
+const { work } = Astro.props as { work: Work };
+const { Content } = await render(work);
+const d = work.data;
+const rows: [string, string, string?][] = [
+  ["Years", years(work)],
+  ...(d.role ? [["Role", d.role] as [string, string]] : []),
+  ...(d.with ? [["With", d.with] as [string, string]] : []),
+  ...d.links.map((l) => ["Link", l.label, l.url] as [string, string, string]),
+];
+---
+<Base title={d.title} description={d.summary}>
+  <span class="label"><a class="crumb" href={url("works/")}>Works</a> · {years(work)}</span>
+  <h1>{d.title}</h1>
+  <p class="lead">{d.summary}</p>
+
+  <Facts rows={rows} />
+
+  {work.body?.trim() && <div class="prose body"><Content /></div>}
+
+  {d.video && <iframe class="video" src={d.video} title={d.title} loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>}
+
+  {d.images.length > 0 && (
+    <div class="media">
+      {d.images.map((i) => (
+        <figure class="media">
+          <img src={url(`images/${i.src}`).replace(/\/$/, "")} alt={i.alt} loading="lazy" />
+          {i.caption && <figcaption>{i.caption}</figcaption>}
+        </figure>
+      ))}
+    </div>
+  )}
+</Base>

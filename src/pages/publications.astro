@@ -1,0 +1,39 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Base from "../layouts/Base.astro";
+
+type Pub = CollectionEntry<"publications">;
+
+const pubs = await getCollection("publications");
+const yearsDesc = [...new Set(pubs.map((p) => p.data.year))].sort((a, b) => b - a);
+const authors = (p: Pub) => p.data.authors.map((a, i) => (p.data.equal && i < p.data.equal ? `${a}*` : a)).join(", ");
+const links = (p: Pub) => [
+  ...(p.data.doi ? [{ label: "DOI", url: `https://doi.org/${p.data.doi}` }] : []),
+  ...(p.data.url ? [{ label: "Link", url: p.data.url }] : []),
+  ...(p.data.tsost ? [{ label: "TSOST", url: `https://francesco-di-maggio.github.io/tsost/publications/${p.data.tsost}/` }] : []),
+];
+---
+<Base title="Publications" description="Papers, workshops and book chapters by Francesco Di Maggio.">
+  <h1>Publications</h1>
+  <p class="lead">Papers, workshops and book chapters. * Equal contribution.</p>
+  {yearsDesc.map((y) => (
+    <Fragment>
+      <h2 class="label">{y}</h2>
+      <div class="panel lists">
+        <ul class="list">
+          {pubs.filter((p) => p.data.year === y).map((p) => (
+            <li class="cite" id={p.id}>
+              <b>{p.data.title}</b>
+              <span class="sub">{authors(p)}</span>
+              <span class="sub">{[p.data.venue, p.data.kind, p.data.status].filter(Boolean).join(" · ")}</span>
+              <span class="links label">
+                {p.data.award && <span class="award">{p.data.award}</span>}
+                {links(p).map((l) => <a href={l.url}>{l.label} →</a>)}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Fragment>
+  ))}
+</Base>
