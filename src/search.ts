@@ -88,4 +88,5 @@ export function startSearch() {
   document.addEventListener("click", (e) => {
     if (!panel.hidden && !panel.contains(e.target as Node) && !button.contains(e.target as Node)) close();
   });
+  document.addEventListener("astro:after-swap", close);
 }
