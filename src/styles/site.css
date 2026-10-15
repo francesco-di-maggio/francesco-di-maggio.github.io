@@ -26,8 +26,6 @@ header { display: flex; align-items: center; justify-content: space-between; gap
 .icon, #theme { flex: none; width: 32px; height: 36px; margin: -4px 0; display: flex; align-items: center; justify-content: center;
          padding: 0; border: 0; background: none; color: var(--dim); cursor: pointer; }
 .icon { color: var(--dim); }
-/* Small phones: name and five buttons on one line. */
-@media (max-width: 374px) { .end { gap: 0; } .icon, #theme { width: 22px; } .mark { letter-spacing: 0; } }
 .icon:hover { color: var(--ink); }
 .icon svg { width: 16px; height: 16px; }
 #theme svg { display: none; }
@@ -119,6 +117,9 @@ a.panel .title { display: block; margin: 2px 0; font-size: 16px; line-height: 22
 footer { display: flex; justify-content: space-between; gap: 12px; margin-top: min(20px, 3vh); padding-top: 10px; border-top: 1px solid var(--line); }
 footer a { text-decoration: none; }
 footer a:hover { color: var(--ink); }
+footer .links { display: flex; align-items: center; gap: 14px; }
+footer .links a { display: flex; color: var(--dim); }
+footer .links svg { width: 14px; height: 14px; }
 
 /* CV groups: one row that opens to its dates. */
 .group summary { cursor: pointer; list-style: none; }
