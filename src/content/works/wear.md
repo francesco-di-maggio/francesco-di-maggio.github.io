@@ -5,7 +5,6 @@ start: 2021
 end: 2021
 role: "Master's research, Institute of Sonology"
 images:
-  - { src: "wear-1.jpg", alt: "w/ear" }
   - { src: "wear-2.jpg", alt: "w/ear" }
   - { src: "wear-3.jpg", alt: "w/ear" }
 ---
