@@ -20,8 +20,8 @@ const SECTIONS = {
 
 // Repeated events collapse into one row that opens to the dates.
 const GROUPS: Record<Group, { title: string; sub: string; noun: string; work?: string }> = {
-  monolith: { title: "Monolith", sub: "With Sofie Kramer and Mári Mákó", noun: "shows", work: "monolith" },
-  "a-pole-tragedy": { title: "A Pole Tragedy", sub: "With Sofie Kramer and Mári Mákó", noun: "shows", work: "a-pole-tragedy" },
+  monolith: { title: "Monolith", sub: "with Sofie Kramer and Mári Mákó", noun: "shows", work: "monolith" },
+  "a-pole-tragedy": { title: "A Pole Tragedy", sub: "with Sofie Kramer and Mári Mákó", noun: "shows", work: "a-pole-tragedy" },
 };
 
 // Newest first: `when` starts with the year, so text order is date order. Languages: level in `when` (Native > C > B > A).
@@ -75,7 +75,7 @@ const span = (items: Entry[]) => {
               return (
                 <li id={r.group}><details class="group">
                   <summary class="row">
-                    <span class="text"><b>{g.title}</b><span class="sub">{r.items.length} {g.noun}. {g.sub}</span></span>
+                    <span class="text"><b>{g.title}</b><span class="sub">{r.items.length} {g.noun} {g.sub}</span></span>
                     <span class="label">{span(r.items)}<span class="toggle" aria-hidden="true"></span></span>
                   </summary>
                   <ul class="list">
