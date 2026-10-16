@@ -66,12 +66,6 @@
   thesis: "Building an Interactive Music System for Real-Time Synchronisation"
   url: https://drive.google.com/file/d/1W-AdJhuQkb8S5WWbTl9oW5ac5J3hsr2K/view
 
-- id: erasmus
-  section: education
-  when: 2017–2018
-  title: Erasmus Exchange
-  sub: Royal Conservatoire, The Hague, NL
-
 - id: bsc-perugia
   section: education
   when: "2017"
@@ -79,12 +73,6 @@
   sub: 'Conservatorio "F. Morlacchi", Perugia, IT'
   thesis: "Joyzer. Intuitività, ricerca e tecnologia. Un nuovo strumento musicale elettronico (Joyzer. Intuitiveness, Research and Technology. A New Electronic Musical Instrument)"
   url: https://drive.google.com/file/d/1x06Ut6S0Ch9NvhzM95xu0NlCZdgWVvgq/view
-
-- id: liceo
-  section: education
-  when: "2011"
-  title: Diploma, Humanities
-  sub: Liceo Classico "A. Poliziano", Montepulciano, IT
 
 
 - id: monolith-2025-rooms
@@ -209,6 +197,13 @@
   title: Déplacement, Atau Tanaka and Erämaa Trio
   sub: Programming and score preparation, Ars Musica, Brussels, BE
   url: https://github.com/ataut/deplacement-eramaa
+
+- id: komorebi-2021
+  section: assistance
+  when: "2021"
+  title: Komorebi, Matteo Marangoni
+  sub: Assembly
+  url: https://matteomarangoni.com/Komorebi-page
 
 - id: echolocate-2024
   section: assistance
