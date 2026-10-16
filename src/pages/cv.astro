@@ -93,7 +93,9 @@ const span = (items: Entry[]) => {
             const e = r;
             const text = <span class="text"><b>{e.data.title}</b>{e.data.sub && <span class="sub">{e.data.sub}</span>}{e.data.thesis && <span class="sub">Thesis: {e.data.thesis}</span>}</span>;
             const when = <span class="label">{e.data.when}</span>;
-            return <li id={e.id}>{e.data.url ? <a class="row" href={e.data.url}>{text}{when}</a> : <div class="row">{text}{when}</div>}</li>;
+            // Ongoing, as on Works: the accent dot before the date.
+            const on = e.data.when.endsWith("present");
+            return <li id={e.id}>{e.data.url ? <a class:list={["row", { on }]} href={e.data.url}>{text}{when}</a> : <div class:list={["row", { on }]}>{text}{when}</div>}</li>;
           })}
         </ul>
       </div>
