@@ -57,7 +57,7 @@ const span = (items: Entry[]) => {
     <p class="label">f.di.maggio@tue.nl · github.com/francesco-di-maggio · linkedin.com/in/francesco-di-maggio</p>
   </div>
   <h1 class="screen-only">CV</h1>
-  <p class="lead screen-only">Work, teaching, education, performances, assistance, presentations and languages. <a id="pdf" class="label" href={url("cv.pdf").replace(/\/$/, "")} download="Francesco Di Maggio CV.pdf">PDF <span aria-hidden="true">↓</span></a></p>
+  <p class="lead screen-only">Work, education and languages. <a id="pdf" class="label" href={url("cv.pdf").replace(/\/$/, "")} download="Francesco Di Maggio CV.pdf">PDF <span aria-hidden="true">↓</span></a></p>
   {Object.entries(SECTIONS).map(([key, title]) => (
     <Fragment>
       {key === "languages" && (
