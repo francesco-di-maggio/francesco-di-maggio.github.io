@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "cv-pdf": "astro preview stop; astro build && astro preview --background --port 4339 && '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --no-pdf-header-footer --print-to-pdf=public/cv.pdf http://localhost:4339/cv/; astro preview stop"
   },
   "dependencies": {
     "astro": "^7.3.8"

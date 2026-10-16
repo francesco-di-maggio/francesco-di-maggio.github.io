@@ -159,13 +159,6 @@
   sub: Podium Bloos, Breda, NL
   url: https://sofiekramer.nl/kopie-van-a-pole-tragedy-1
 
-- id: bbdmi-2022-concert
-  section: performances
-  when: "2022-12-08"
-  title: Concert du projet BBDMI
-  sub: MSH Paris Nord, Saint-Denis, FR
-  url: https://www.mshparisnord.fr/event/concert-du-projet-bbdmi/
-
 - id: monolith-2022-krakow
   section: performances
   group: monolith
@@ -211,11 +204,18 @@
   url: https://maxsummer2022.geidai.ac.jp/en/instructors/
 
 - id: deplacement-2024-arsmusica
-  section: performances
+  section: assistance
   when: "2024-11-19"
   title: Déplacement, Atau Tanaka and Erämaa Trio
-  sub: Ars Musica, Théâtre Marni, Brussels, BE
+  sub: Programming and score preparation, Ars Musica, Brussels, BE
   url: https://github.com/ataut/deplacement-eramaa
+
+- id: echolocate-2024
+  section: assistance
+  when: "2024-10-31"
+  title: Echolocate, Atau Tanaka
+  sub: Programming and score preparation
+  url: https://www.youtube.com/watch?v=J83wzGEa0PQ
 
 - id: italian
   section: languages

@@ -52,7 +52,7 @@ const phd = defineCollection({
 const cv = defineCollection({
   loader: file("src/data/cv.yaml"),
   schema: z.object({
-    section: z.enum(["work", "teaching", "education", "performances", "presentations", "languages"]),
+    section: z.enum(["work", "teaching", "education", "performances", "assistance", "presentations", "languages"]),
     group: z.enum(["monolith", "a-pole-tragedy"]).optional(),
     when: z.coerce.string(),
     title: z.string(),

@@ -136,17 +136,17 @@ footer .links svg { width: 14px; height: 14px; }
 .pager b { font-size: 15px; line-height: 20px; font-weight: 600; }
 .pager a:hover b { text-decoration: underline; text-decoration-color: var(--dim); text-underline-offset: 3px; }
 
-#pdf { margin-left: 8px; padding: 0; border: 0; background: none; color: var(--ink); cursor: pointer; }
+#pdf { margin-left: 8px; color: var(--ink); text-decoration: none; }
 #pdf:hover { text-decoration: underline; text-underline-offset: 3px; }
 .print-only { display: none; }
 
 /* Paper: black on white, one column, no site chrome. Links stay clickable in the PDF. */
 @media print {
-  @page { margin: 16mm; }
+  @page { size: A4; margin: 14mm 16mm; }
   :root { --bg: #fff; --surface: #fff; --ink: #000; --dim: #555; --line: #ddd; }
   html, body { background: #fff; }
   body { max-width: none; padding: 0; font-size: 10pt; min-height: 0; }
-  header, nav, footer, #search, #pdf, .toggle, .pager { display: none !important; }
+  header, nav, footer, #search, #pdf, .toggle, .pager, .list .arrow { display: none !important; }
   .print-only { display: block; }
   .screen-only { display: none !important; }
   h1 { font-size: 20pt; }
@@ -155,7 +155,7 @@ footer .links svg { width: 14px; height: 14px; }
   .panel.lists { padding: 0; }
   .list .row { min-height: 0; padding: 4px 0; }
   .list li { break-inside: avoid; }
-  h2.label { margin-top: 5mm; break-after: avoid; }
+  h2.label { margin-top: 4mm; break-after: avoid; }
   a { text-decoration: none; }
   .group > .list { margin: 0 0 4px; }
 }
