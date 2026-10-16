@@ -28,11 +28,6 @@ li:target b { text-decoration: underline; text-decoration-color: var(--accent); 
 .group > .list { margin: 0 0 8px; padding-left: 14px; border-left: 1px solid var(--line); }
 .group > .list .row { min-height: 40px; padding: 8px 0; }
 /* Previous and next work. */
-.pager { display: flex; justify-content: space-between; gap: 16px; margin-top: min(16px, 2vh); }
-.pager a { display: flex; flex-direction: column; gap: 4px; max-width: 48%; text-decoration: none; }
-.pager a:last-child { margin-left: auto; text-align: right; }
-.pager b { font-size: 15px; line-height: 20px; font-weight: 600; }
-.pager a:hover b { text-decoration: underline; text-decoration-color: var(--dim); text-underline-offset: 3px; }
 #pdf { margin-left: 8px; color: var(--ink); text-decoration: none; }
 #pdf:hover { text-decoration: underline; text-underline-offset: 3px; }
 .print-only { display: none; }
