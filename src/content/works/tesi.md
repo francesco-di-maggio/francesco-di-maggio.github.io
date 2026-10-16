@@ -1,12 +1,12 @@
 ---
 title: "TESI"
-summary: "A toolkit for tangible and embodied sound interaction."
+summary: "A modular toolkit for exploring sound in distributed systems of tangible interfaces."
 start: 2024
 links:
-  - { label: "TSOST", url: "https://francescodimaggio.nl/tsost/works/tesi/" }
+  - { label: "Website", url: "https://francescodimaggio.nl/tesi/" }
   - { label: "GitHub", url: "https://github.com/francesco-di-maggio/tesi" }
 images:
   - { src: "tesi-1.jpg", alt: "TESI" }
 ---
 
-An open-source prototype designed as a sound-centered Tangible User Interface (TUI) for networked, interactive music systems. It enables real-time sensor-based interaction for embodied sound exploration.
+Hardware nodes, network tools and sound mappings in Max and Pure Data. Part of the PhD research TSOST at TU/e.
