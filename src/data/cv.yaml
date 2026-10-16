@@ -210,3 +210,28 @@
   title: Déplacement, Atau Tanaka and Erämaa Trio
   sub: Ars Musica, Théâtre Marni, Brussels, BE
   url: https://github.com/ataut/deplacement-eramaa
+
+- id: italian
+  section: languages
+  when: Native
+  title: Italian
+
+- id: english
+  section: languages
+  when: C2
+  title: English
+
+- id: dutch
+  section: languages
+  when: B1
+  title: Dutch
+
+- id: russian
+  section: languages
+  when: C1
+  title: Russian
+
+- id: french
+  section: languages
+  when: A2
+  title: French
