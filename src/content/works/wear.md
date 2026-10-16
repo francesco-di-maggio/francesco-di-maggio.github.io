@@ -9,4 +9,4 @@ images:
   - { src: "wear-3.jpg", alt: "w/ear" }
 ---
 
-Two soft balls, each with five conductive buttons and a motion sensor that tracks the orientation of the arms; a neural network shapes sound and space in real time. Inspired by Michel Waisvisz's The Hands (STEIM). Played in Ø.
+Two soft balls, each with five conductive buttons and a motion sensor that tracks the orientation of the arms; a neural network shapes sound and space in real time. Inspired by Michel Waisvisz's The Hands (STEIM).
