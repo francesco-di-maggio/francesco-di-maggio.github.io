@@ -57,6 +57,7 @@ const cv = defineCollection({
     when: z.coerce.string(),
     title: z.string(),
     sub: z.string().optional(),
+    thesis: z.string().optional(),
     url: z.url().optional(),
   }),
 });

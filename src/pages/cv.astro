@@ -84,7 +84,7 @@ const span = (items: Entry[]) => {
               );
             }
             const e = r;
-            const text = <span class="text"><b>{e.data.title}</b>{e.data.sub && <span class="sub">{e.data.sub}</span>}</span>;
+            const text = <span class="text"><b>{e.data.title}</b>{e.data.sub && <span class="sub">{e.data.sub}</span>}{e.data.thesis && <span class="sub">Thesis: {e.data.thesis}</span>}</span>;
             const when = <span class="label">{e.data.when}</span>;
             return <li id={e.id}>{e.data.url ? <a class="row" href={e.data.url}>{text}{when}</a> : <div class="row">{text}{when}</div>}</li>;
           })}

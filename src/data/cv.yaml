@@ -46,21 +46,25 @@
   section: education
   when: "2021"
   title: Master's, Sonology – Instruments & Interfaces
-  sub: Royal Conservatoire, The Hague, and STEIM, NL
-  url: http://sonology.org/
+  sub: "Royal Conservatoire, The Hague, and STEIM, NL"
+  thesis: "Ø: An Interactive Music System for Real-Time Composition"
+  url: https://drive.google.com/file/d/1MEnf_CK7-UiMb8alL2tC_cE5t2-d0BgQ/view
 
 - id: msc-perugia
   section: education
   when: "2020"
   title: Master's, Electronic Music
-  sub: Conservatorio "F. Morlacchi", Perugia, IT
+  sub: 'Conservatorio "F. Morlacchi", Perugia, IT'
+  thesis: "Comporre interazione (Composing Interaction)"
+  url: https://drive.google.com/file/d/1ih_qbcC_k8jB4KE4LNnlM0lyeR5y8NGH/view
 
 - id: bsc-sonology
   section: education
   when: "2019"
   title: Bachelor's, Sonology – Instruments & Interfaces
-  sub: Royal Conservatoire, The Hague, NL
-  url: http://sonology.org/
+  sub: "Royal Conservatoire, The Hague, NL"
+  thesis: "Building an Interactive Music System for Real-Time Synchronisation"
+  url: https://drive.google.com/file/d/1W-AdJhuQkb8S5WWbTl9oW5ac5J3hsr2K/view
 
 - id: erasmus
   section: education
@@ -72,7 +76,9 @@
   section: education
   when: "2017"
   title: Bachelor's, Electronic Music
-  sub: Conservatorio "F. Morlacchi", Perugia, IT
+  sub: 'Conservatorio "F. Morlacchi", Perugia, IT'
+  thesis: "Joyzer"
+  url: https://drive.google.com/file/d/1x06Ut6S0Ch9NvhzM95xu0NlCZdgWVvgq/view
 
 - id: liceo
   section: education
